@@ -25,6 +25,12 @@ public class NotificationsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<NotificationDto>> Create(CreateNotificationDto dto)
     {
+        if (string.IsNullOrWhiteSpace(dto.Title))
+            return BadRequest("Title is required.");
+
+        if (string.IsNullOrWhiteSpace(dto.Message))
+            return BadRequest("Message is required.");
+
         var notification = await _notificationService.CreateAsync(dto);
         return CreatedAtAction(nameof(GetAll), new { id = notification.NotificationId }, notification);
     }
