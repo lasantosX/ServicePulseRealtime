@@ -3,6 +3,7 @@ using ServicePulseRealtime.Api.Data;
 using ServicePulseRealtime.Api.Hubs;
 using ServicePulseRealtime.Api.Interfaces;
 using ServicePulseRealtime.Api.Services;
+using ServicePulseRealtime.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.UseSwagger();
 app.UseSwaggerUI();
