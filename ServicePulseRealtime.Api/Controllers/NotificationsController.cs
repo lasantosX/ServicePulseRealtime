@@ -45,4 +45,18 @@ public class NotificationsController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpPost("seed")]
+    public async Task<IActionResult> Seed()
+    {
+        var inserted = await _notificationService.SeedSampleDataAsync();
+
+        return Ok(new
+        {
+            inserted,
+            message = inserted == 0
+                ? "Sample data already exists."
+                : "Sample notifications created successfully."
+        });
+    }
 }
