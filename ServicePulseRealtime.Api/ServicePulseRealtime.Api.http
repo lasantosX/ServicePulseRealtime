@@ -1,0 +1,6 @@
+@ServicePulseRealtime.Api_HostAddress = http://localhost:5245
+
+GET {{ServicePulseRealtime.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
