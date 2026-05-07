@@ -116,4 +116,7 @@ Portfolio Pitch
 
 This project shows my ability to build real-time, production-style full stack systems using ASP.NET Core, SignalR, SQL Server, and Vue.js.
 
+
+<img width="1229" height="817" alt="image" src="https://github.com/user-attachments/assets/78b117bc-b517-4c50-a260-91ac27544cd2" />
+
 It demonstrates backend API design, database persistence, frontend integration, real-time communication, error handling, and clean project structure.
